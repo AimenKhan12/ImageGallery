@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nature & Travel Gallery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Visual World Gallery</h1>
+<p>Discover Beauty From Around The World</p>
+</header>
+
+<section class="gallery">
+
+<div class="card">
+<img src="images/img1.jpg">
+<div class="caption">Nature Landscape</div>
+</div>
+
+<div class="card wide">
+<img src="images/img2.jpg">
+<div class="caption">Mountain View</div>
+</div>
+
+<div class="card">
+<img src="images/img3.jpg">
+<div class="caption">Sunset Beauty</div>
+</div>
+
+<div class="card">
+<img src="images/img4.jpg">
+<div class="caption">Forest Path</div>
+</div>
+
+<div class="card tall">
+<img src="images/img5.jpg">
+<div class="caption">Waterfall</div>
+</div>
+
+<div class="card">
+<img src="images/img6.jpg">
+<div class="caption">Paris</div>
+</div>
+
+<div class="card wide">
+<img src="images/img7.jpg">
+<div class="caption">Dubai Skyline</div>
+</div>
+
+<div class="card">
+<img src="images/img8.jpg">
+<div class="caption">Cappadocia Turkey</div>
+</div>
+
+<div class="card tall">
+<img src="images/img9.jpg">
+<div class="caption">Aesthetic Landscape</div>
+</div>
+
+<div class="card large">
+<img src="images/img10.jpg">
+<div class="caption">Minimal Nature</div>
+</div>
+
+<div class="card tall">
+<img src="images/img 11.jpg">
+<div class="caption">Colorful Sky</div>
+</div>
+<div class="card">
+<img src="images/img12.jpg">
+<div class="caption">Cyberpunk City</div>
+</div>
+
+<div class="card wide">
+<img src="images/img13.jpg">
+<div class="caption">Milky Way Galaxy</div>
+</div>
+
+<div class="card">
+<img src="images/img14.jpg">
+<div class="caption">Lion Portrait</div>
+</div>
+
+<div class="card tall">
+<img src="images/img15.jpg">
+<div class="caption">Colorful Parrot</div>
+</div>
+
+<div class="card">
+<img src="images/img16.jpg">
+<div class="caption">Pink Flowers</div>
+</div>
+
+<div class="card tall">
+<img src="images/img17.jpg">
+<div class="caption">Cherry Blossom</div>
+</div>
+
+<div class="card tall">
+<img src="images/img18.jpg">
+<div class="caption">Architecture</div>
+</div>
+
+<div class="card ">
+<img src="images/img19.jpg">
+<div class="caption">white fox</div>
+</div>
+<div class="card large">
+<img src="images/img20.jpg">
+<div class="caption">Golden Sunset Ocean</div>
+</div>
+
+<div class="card ">
+<img src="images/img21.jpg">
+<div class="caption">Starry Night Mountains</div>
+</div>
+
+<div class="card">
+<img src="images/img22.jpg">
+<div class="caption">Desert Dunes Sunset</div>
+</div>
+</section>
+<div id="lightbox">
+<img id="lightbox-img">
+</div>
+<footer>
+<p>© 2026 Image Gallery | Made with ❤️</p>
+</footer>
+<script>
+
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+} else {
+entry.target.classList.remove("show");
+}
+
+});
+
+},{
+threshold:0.15
+});
+
+cards.forEach(card=>{
+observer.observe(card);
+});
+
+</script>
+<script>
+
+/* Lightbox */
+
+const images = document.querySelectorAll(".card img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+images.forEach(img => {
+
+img.addEventListener("click", () => {
+
+lightbox.classList.add("active");
+lightboxImg.src = img.src;
+
+});
+
+});
+
+lightbox.addEventListener("click", () => {
+lightbox.classList.remove("active");
+});
+
+</script>
+</body>
+</html>
